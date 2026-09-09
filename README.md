@@ -136,5 +136,3 @@ and checksum.
 
 This repository is released under the [MIT License](LICENSE). 
 
-The HORUS ontology is licensed separately, under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), and is used here with attribution to its author. See [ontology/README.md](ontology/README.md).
