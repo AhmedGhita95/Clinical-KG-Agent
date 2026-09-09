@@ -1,0 +1,61 @@
+@prefix h: <http://www.semanticweb.org/ahmedghita/ontologies/2025/HORUS/v6#> .
+@prefix s: <urn:horus:v6:shapes:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+s:PerformedByShape a sh:NodeShape ;
+    sh:targetSubjectsOf h:performedBy ;
+    sh:class h:Action ;
+    sh:property [
+        sh:path h:performedBy ;
+        sh:nodeKind sh:IRI ;
+        sh:class h:Agent
+    ] .
+
+s:ActsOnShape a sh:NodeShape ;
+    sh:targetSubjectsOf h:actsOn ;
+    sh:class h:Action ;
+    sh:property [
+        sh:path h:actsOn ;
+        sh:nodeKind sh:IRI ;
+        sh:class h:Entity
+    ] .
+
+s:OccursInShape a sh:NodeShape ;
+    sh:targetSubjectsOf h:occursIn ;
+    sh:class h:Occurrent ;
+    sh:property [
+        sh:path h:occursIn ;
+        sh:nodeKind sh:IRI ;
+        sh:class h:Place
+    ] .
+
+s:HasStepShape a sh:NodeShape ;
+    sh:targetSubjectsOf h:hasStep ;
+    sh:class h:Procedure ;
+    sh:property [
+        sh:path h:hasStep ;
+        sh:nodeKind sh:IRI ;
+        sh:class h:Action
+    ] .
+
+s:HoldsForShape a sh:NodeShape ;
+    sh:targetSubjectsOf h:holdsFor ;
+    sh:class h:State ;
+    sh:property [
+        sh:path h:holdsFor ;
+        sh:nodeKind sh:IRI ;
+        sh:class h:Entity
+    ] .
+
+s:AboutShape a sh:NodeShape ;
+    sh:targetSubjectsOf h:about ;
+    sh:class h:Assertion ;
+    sh:property [
+        sh:path h:about ;
+        sh:nodeKind sh:IRI ;
+        sh:or (
+            [ sh:class h:Entity ]
+            [ sh:class h:Occurrent ]
+            [ sh:class h:State ]
+        )
+    ] .

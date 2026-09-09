@@ -1,0 +1,22 @@
+@prefix h: <http://www.semanticweb.org/ahmedghita/ontologies/2025/HORUS/v6#> .
+@prefix e: <urn:horus:example:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+e:nurse_1 a h:Agent ; rdfs:label "nurse" .
+e:patient_1 a h:Agent ; rdfs:label "patient" .
+e:wheelchair_1 a h:Object ; rdfs:label "wheelchair" .
+e:corridor_1 a h:Place ; rdfs:label "corridor" .
+
+e:pushing_1 a h:Action ;
+    rdfs:label "pushing" ;
+    h:performedBy e:nurse_1 ;
+    h:actsOn e:wheelchair_1 ;
+    h:occursIn e:corridor_1 .
+
+e:transfer_1 a h:Procedure ;
+    rdfs:label "patient transfer" ;
+    h:hasStep e:pushing_1 .
+
+e:seated_1 a h:State ;
+    rdfs:label "seated" ;
+    h:holdsFor e:patient_1 .

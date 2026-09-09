@@ -1,0 +1,6 @@
+# HuggingFace Spaces installs from this file. pyproject.toml stays the single source
+# of truth for the dependency list. The install must be editable: config.py resolves
+# ontology/, queries/ and fixtures/ by walking up from its own path, which only
+# points at the repository root when the package is installed in place. The GPU-only
+# extras are excluded because Spaces runs this on the free CPU tier.
+-e .

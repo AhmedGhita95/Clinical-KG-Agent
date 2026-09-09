@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xml:base="http://www.semanticweb.org/ahmedghita/ontologies/2025/HORUS/v6">
+
+    <owl:Ontology rdf:about="">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/ahmedghita/ontologies/2025/HORUS/v6/6.0.0"/>
+        <owl:versionInfo>6.0.0</owl:versionInfo>
+        <rdfs:label xml:lang="en">HORUS v6</rdfs:label>
+        <rdfs:comment xml:lang="en">An ontology for representing information from clinical scenes.</rdfs:comment>
+    </owl:Ontology>
+
+    <owl:Class rdf:about="#Entity">
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <rdfs:comment xml:lang="en">Who or what is present.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Agent">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+        <rdfs:comment xml:lang="en">People involved.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Object">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label xml:lang="en">Object</rdfs:label>
+        <rdfs:comment xml:lang="en">Physical items.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Place">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label xml:lang="en">Place</rdfs:label>
+        <rdfs:comment xml:lang="en">Locations.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Occurrent">
+        <rdfs:label xml:lang="en">Occurrent</rdfs:label>
+        <rdfs:comment xml:lang="en">What happens.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Action">
+        <rdfs:subClassOf rdf:resource="#Occurrent"/>
+        <rdfs:label xml:lang="en">Action</rdfs:label>
+        <rdfs:comment xml:lang="en">An individual action.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Procedure">
+        <rdfs:subClassOf rdf:resource="#Occurrent"/>
+        <rdfs:label xml:lang="en">Procedure</rdfs:label>
+        <rdfs:comment xml:lang="en">An activity comprising related actions.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#State">
+        <rdfs:label xml:lang="en">State</rdfs:label>
+        <rdfs:comment xml:lang="en">How an entity is at a given time.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Assertion">
+        <rdfs:label xml:lang="en">Assertion</rdfs:label>
+        <rdfs:comment xml:lang="en">Links represented information to its source description.</rdfs:comment>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="#performedBy">
+        <rdfs:domain rdf:resource="#Action"/>
+        <rdfs:range rdf:resource="#Agent"/>
+        <rdfs:label xml:lang="en">performed by</rdfs:label>
+        <rdfs:comment xml:lang="en">Who performs the action.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#actsOn">
+        <rdfs:domain rdf:resource="#Action"/>
+        <rdfs:range rdf:resource="#Entity"/>
+        <rdfs:label xml:lang="en">acts on</rdfs:label>
+        <rdfs:comment xml:lang="en">What the action affects.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#occursIn">
+        <rdfs:domain rdf:resource="#Occurrent"/>
+        <rdfs:range rdf:resource="#Place"/>
+        <rdfs:label xml:lang="en">occurs in</rdfs:label>
+        <rdfs:comment xml:lang="en">Where it happens.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasStep">
+        <rdfs:domain rdf:resource="#Procedure"/>
+        <rdfs:range rdf:resource="#Action"/>
+        <rdfs:label xml:lang="en">has step</rdfs:label>
+        <rdfs:comment xml:lang="en">Which actions belong to a procedure.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#holdsFor">
+        <rdfs:domain rdf:resource="#State"/>
+        <rdfs:range rdf:resource="#Entity"/>
+        <rdfs:label xml:lang="en">holds for</rdfs:label>
+        <rdfs:comment xml:lang="en">Who or what has the state.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#about">
+        <rdfs:domain rdf:resource="#Assertion"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Entity"/>
+                    <rdf:Description rdf:about="#Occurrent"/>
+                    <rdf:Description rdf:about="#State"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">about</rdfs:label>
+        <rdfs:comment xml:lang="en">What the assertion describes.</rdfs:comment>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

@@ -1,0 +1,8 @@
+PREFIX h: <http://www.semanticweb.org/ahmedghita/ontologies/2025/HORUS/v6#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?procedure ?action WHERE {
+    ?activity a h:Procedure ; rdfs:label ?procedure ; h:hasStep ?event .
+    ?event rdfs:label ?action .
+}
+ORDER BY ?procedure ?action

@@ -1,0 +1,8 @@
+PREFIX h: <http://www.semanticweb.org/ahmedghita/ontologies/2025/HORUS/v6#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?state ?entity WHERE {
+    ?condition a h:State ; rdfs:label ?state ; h:holdsFor ?subject .
+    ?subject rdfs:label ?entity .
+}
+ORDER BY ?state ?entity

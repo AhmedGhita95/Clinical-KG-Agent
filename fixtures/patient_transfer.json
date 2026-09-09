@@ -1,0 +1,80 @@
+{
+  "source_id": "patient_transfer_001",
+  "source_text": "During a patient transfer, a nurse pushes a seated patient in a wheelchair along a corridor.",
+  "instances": [
+    {
+      "id": "nurse_1",
+      "type": "Agent",
+      "label": "nurse",
+      "evidence_text": "a nurse"
+    },
+    {
+      "id": "patient_1",
+      "type": "Agent",
+      "label": "patient",
+      "evidence_text": "a seated patient"
+    },
+    {
+      "id": "wheelchair_1",
+      "type": "Object",
+      "label": "wheelchair",
+      "evidence_text": "a wheelchair"
+    },
+    {
+      "id": "corridor_1",
+      "type": "Place",
+      "label": "corridor",
+      "evidence_text": "a corridor"
+    },
+    {
+      "id": "pushing_1",
+      "type": "Action",
+      "label": "pushing",
+      "evidence_text": "pushes"
+    },
+    {
+      "id": "transfer_1",
+      "type": "Procedure",
+      "label": "patient transfer",
+      "evidence_text": "During a patient transfer"
+    },
+    {
+      "id": "seated_1",
+      "type": "State",
+      "label": "seated",
+      "evidence_text": "a seated patient"
+    }
+  ],
+  "relations": [
+    {
+      "subject": "pushing_1",
+      "predicate": "performedBy",
+      "object": "nurse_1",
+      "evidence_text": "a nurse pushes"
+    },
+    {
+      "subject": "pushing_1",
+      "predicate": "actsOn",
+      "object": "wheelchair_1",
+      "evidence_text": "pushes ... in a wheelchair"
+    },
+    {
+      "subject": "pushing_1",
+      "predicate": "occursIn",
+      "object": "corridor_1",
+      "evidence_text": "pushes ... along a corridor"
+    },
+    {
+      "subject": "transfer_1",
+      "predicate": "hasStep",
+      "object": "pushing_1",
+      "evidence_text": "During a patient transfer ... pushes"
+    },
+    {
+      "subject": "seated_1",
+      "predicate": "holdsFor",
+      "object": "patient_1",
+      "evidence_text": "a seated patient"
+    }
+  ]
+}

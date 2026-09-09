@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: Clinical KG Agent
+message: >-
+  If you use this software, please cite it using the metadata from this file.
+type: software
+authors:
+  - given-names: Ahmed
+    family-names: Ghita
+repository-code: https://github.com/AhmedGhita95/Clinical-KG-Agent
+abstract: >-
+  Clinical KG Agent turns a clinical-scene video into a validated, queryable
+  knowledge graph. A vision-language model proposes typed instances and
+  relations, which are accepted only if they conform to the HORUS ontology.
+  Validated assertions are serialized as RDF and queried with SPARQL.
+keywords:
+  - knowledge graph
+  - ontology
+  - OWL
+  - RDF
+  - SHACL
+  - SPARQL
+  - vision-language model
+  - semantic validation
+  - clinical scene understanding
+license: MIT
+version: 0.1.0
+date-released: '2026-09-09'
+references:
+  - type: data
+    title: 'HORUS: an ontology for representing information from clinical scenes'
+    authors:
+      - given-names: Ahmed
+        family-names: Ghita
+    version: 6.0.0
+    license: CC-BY-4.0
+    repository-code: https://github.com/AhmedGhita95/HORUS

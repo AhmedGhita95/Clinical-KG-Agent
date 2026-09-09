@@ -1,0 +1,22 @@
+{
+  "CQ1": {
+    "columns": ["person"],
+    "rows": [["nurse"], ["patient"]]
+  },
+  "CQ2": {
+    "columns": ["action", "person"],
+    "rows": [["pushing", "nurse"]]
+  },
+  "CQ3": {
+    "columns": ["action", "place"],
+    "rows": [["pushing", "corridor"]]
+  },
+  "CQ4": {
+    "columns": ["procedure", "action"],
+    "rows": [["patient transfer", "pushing"]]
+  },
+  "CQ5": {
+    "columns": ["state", "entity"],
+    "rows": [["seated", "patient"]]
+  }
+}

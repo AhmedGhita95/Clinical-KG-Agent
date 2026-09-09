@@ -1,0 +1,8 @@
+PREFIX h: <http://www.semanticweb.org/ahmedghita/ontologies/2025/HORUS/v6#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?action ?person WHERE {
+    ?event a h:Action ; rdfs:label ?action ; h:performedBy ?agent .
+    ?agent rdfs:label ?person .
+}
+ORDER BY ?action ?person
