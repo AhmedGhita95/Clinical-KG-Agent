@@ -24,5 +24,7 @@ EMBEDDING_MODEL_ID = os.getenv(
     "sentence-transformers/all-MiniLM-L6-v2",
 ).strip()
 
-GRADIO_SERVER_NAME = os.getenv("GRADIO_SERVER_NAME", "127.0.0.1").strip()
+# a Space is only reachable when the app binds every interface. locally, stay on loopback.
+_DEFAULT_SERVER_NAME = "0.0.0.0" if os.getenv("SPACE_ID") else "127.0.0.1"
+GRADIO_SERVER_NAME = os.getenv("GRADIO_SERVER_NAME", _DEFAULT_SERVER_NAME).strip()
 GRADIO_SERVER_PORT = int(os.getenv("GRADIO_SERVER_PORT", "7860"))
