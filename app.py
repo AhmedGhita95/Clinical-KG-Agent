@@ -134,6 +134,25 @@ def load_bundled_demo() -> tuple[Any, ...]:
         raise gr.Error(f"Could not load the bundled demo: {error}") from error
 
 
+def _present_failure(description: str, message: str) -> tuple[Any, ...]:
+    """Keep the scene description visible when extraction or validation fails."""
+
+    report = "❌ **Extraction failed.**\n\n```text\n" + message + "\n```"
+    return (
+        None,
+        description,
+        [],
+        report,
+        "",
+        "",
+        gr.update(),
+        "",
+        "Extraction failed. The scene description above is what the model saw.",
+        "",
+        [],
+    )
+
+
 async def analyze_video(video_path: str | None) -> tuple[Any, ...]:
     """Run Qwen perception and extraction before deterministic semantic checks."""
 
@@ -141,15 +160,20 @@ async def analyze_video(video_path: str | None) -> tuple[Any, ...]:
         raise gr.Error("Choose a video first.")
     try:
         description = await asyncio.to_thread(describe_video, video_path)
+    except Exception as error:
+        raise gr.Error(str(error)) from error
+
+    try:
         scene = await asyncio.to_thread(
             extract_scene,
             description,
             "uploaded_video",
             vocabulary(),
         )
-        return _present_scene(scene)
     except Exception as error:
-        raise gr.Error(str(error)) from error
+        # the description cost GPU time and explains the failure, so keep it on screen.
+        return _present_failure(description, str(error))
+    return _present_scene(scene)
 
 
 def run_competency_query(scene_data: dict[str, Any] | None, query_id: str) -> str:
