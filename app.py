@@ -209,7 +209,7 @@ def build_app() -> gr.Blocks:
                     "Analyze the animated video or load its reviewed no-GPU fixture."
                 )
 
-        description = gr.Textbox(label="Qwen scene description", lines=5, interactive=False)
+        description = gr.Textbox(label="Scene description", lines=5, interactive=False)
         validation = gr.Markdown()
         facts = gr.Dataframe(
             headers=FACT_HEADERS,
@@ -227,13 +227,9 @@ def build_app() -> gr.Blocks:
             query_result = gr.Markdown()
 
         with gr.Accordion("Grounded scene questions", open=True):
-            gr.Markdown(
-                "LightRAG retrieves only the validated scene records. The same local Qwen model "
-                "answers from that evidence; the first use downloads/loads the configured models."
-            )
             question = gr.Textbox(label="Question", placeholder="Who performs the transfer action?")
             ask = gr.Button("Ask with LightRAG")
-            answer = gr.Textbox(label="Grounded answer", lines=4, interactive=False)
+            answer = gr.Textbox(label="Answer", lines=4, interactive=False)
             evidence = gr.Dataframe(
                 headers=EVIDENCE_HEADERS,
                 datatype="str",
