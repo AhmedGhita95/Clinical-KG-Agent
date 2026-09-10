@@ -125,13 +125,6 @@ for the vocabulary and [ontology/README.md](ontology/README.md) for release meta
 and checksum.
 
 
-## Limitations
-
-- Model output may be incomplete or wrong. Passing validation means the graph conforms
-  to the HORUS schema, not that the observation is clinically correct.
-- This is a demonstration, not a clinical decision support system.
-- Real patient media must not be used without an approved legal basis.
-
 ## License
 
 This repository is released under the [MIT License](LICENSE). 
