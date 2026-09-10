@@ -1,20 +1,3 @@
----
-title: Clinical KG Agent
-emoji: 🩺
-colorFrom: blue
-colorTo: green
-sdk: gradio
-sdk_version: 5.50.0
-python_version: "3.12"
-app_file: app.py
-pinned: false
-short_description: Ontology-grounded knowledge graphs from clinical scene video
-suggested_hardware: l4x1
-preload_from_hub:
-  - Qwen/Qwen2.5-VL-3B-Instruct
-  - sentence-transformers/all-MiniLM-L6-v2
----
-
 # Clinical KG Agent
 
 [![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/AhmedGhita/clinical-kg-agent)
