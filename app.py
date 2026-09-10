@@ -195,14 +195,7 @@ def build_app() -> gr.Blocks:
     with gr.Blocks(title="Clinical KG Agent") as demo:
         scene_state = gr.State(value=None)
 
-        gr.Markdown(
-            """
-            # Clinical KG Agent
-
-            Turn one clinical-scene video into a locally extracted, HORUS-validated knowledge
-            graph. Use only synthetic or properly de-identified media.
-            """
-        )
+        gr.Markdown("# Clinical KG Agent")
 
         with gr.Row():
             video = gr.Video(
