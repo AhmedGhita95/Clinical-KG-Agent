@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import copy
 import json
 from collections.abc import Callable
+from typing import Any
 
 from pydantic import ValidationError
 
@@ -18,6 +20,26 @@ class ExtractionError(ValueError):
     """Raised when local model output is not a valid HORUS scene."""
 
 
+def _vocabulary_schema(vocabulary: OntologyVocabulary) -> dict[str, Any]:
+    """Replace the free-text type and predicate fields with the ontology's own terms.
+
+    Pydantic describes both as plain strings, which contradicts the prompt text and
+    invites the model to answer with words lifted from the description.
+    """
+
+    schema = copy.deepcopy(HorusScene.model_json_schema())
+    definitions = schema.get("$defs", {})
+    restrictions = (
+        ("SceneInstance", "type", sorted(vocabulary.classes)),
+        ("SceneRelation", "predicate", sorted(vocabulary.properties)),
+    )
+    for definition, field, allowed in restrictions:
+        properties = definitions.get(definition, {}).get("properties", {})
+        if field in properties:
+            properties[field] = {"type": "string", "enum": allowed}
+    return schema
+
+
 def build_extraction_prompt(
     description: str,
     source_id: str,
@@ -30,7 +52,7 @@ def build_extraction_prompt(
         f"- {name}: {constraint.domain} -> {' | '.join(sorted(constraint.ranges))}"
         for name, constraint in sorted(vocabulary.constraints.items())
     )
-    schema = json.dumps(HorusScene.model_json_schema(), ensure_ascii=False)
+    schema = json.dumps(_vocabulary_schema(vocabulary), ensure_ascii=False)
     system_prompt = (
         "Extract only facts stated or directly visible in a clinical scene description. "
         "Return one JSON object and no Markdown. Preserve observed words as instance labels. "

@@ -250,7 +250,7 @@ def build_app() -> gr.Blocks:
             query = gr.Dropdown(choices=_query_choices(), label="HORUS competency query")
             query_result = gr.Markdown()
 
-        with gr.Accordion("Grounded scene questions", open=True):
+        with gr.Accordion("Scene questions", open=True):
             question = gr.Textbox(label="Question", placeholder="Who performs the transfer action?")
             ask = gr.Button("Ask with LightRAG")
             answer = gr.Textbox(label="Answer", lines=4, interactive=False)
