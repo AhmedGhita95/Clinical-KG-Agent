@@ -1,7 +1,7 @@
 """Clinical scene extraction grounded in the HORUS ontology."""
 
-from clinical_kg_agent.models import HorusScene, SceneInstance, SceneRelation
-from clinical_kg_agent.ontology import OntologyVocabulary, load_ontology
+from scenome.models import HorusScene, SceneInstance, SceneRelation
+from scenome.ontology import OntologyVocabulary, load_ontology
 
 __all__ = [
     "HorusScene",

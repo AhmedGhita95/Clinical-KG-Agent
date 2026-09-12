@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from clinical_kg_agent.models import HorusScene, SceneInstance, SceneRelation
-from clinical_kg_agent.ontology import OntologyVocabulary, validate_scene
+from scenome.models import HorusScene, SceneInstance, SceneRelation
+from scenome.ontology import OntologyVocabulary, validate_scene
 
 EXPECTED_CLASSES = {
     "Action",

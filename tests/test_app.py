@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import app
-from clinical_kg_agent.qwen import get_qwen
+from scenome.qwen import get_qwen
 
 
 def test_app_build_is_lazy() -> None:

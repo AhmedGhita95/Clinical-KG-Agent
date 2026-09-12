@@ -4,10 +4,10 @@ from pathlib import Path
 
 import pytest
 
-from clinical_kg_agent.config import FIXTURE_DIR, ONTOLOGY_PATH
-from clinical_kg_agent.models import HorusScene
-from clinical_kg_agent.ontology import OntologyVocabulary, load_ontology
-from clinical_kg_agent.semantic import load_scene_fixture
+from scenome.config import FIXTURE_DIR, ONTOLOGY_PATH
+from scenome.models import HorusScene
+from scenome.ontology import OntologyVocabulary, load_ontology
+from scenome.semantic import load_scene_fixture
 
 
 @pytest.fixture(scope="session")

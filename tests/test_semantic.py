@@ -4,10 +4,10 @@ import json
 
 from rdflib import Graph
 
-from clinical_kg_agent.config import FIXTURE_DIR, QUERY_DIR, SHAPES_PATH
-from clinical_kg_agent.models import HorusScene
-from clinical_kg_agent.ontology import OntologyVocabulary
-from clinical_kg_agent.semantic import (
+from scenome.config import FIXTURE_DIR, QUERY_DIR, SHAPES_PATH
+from scenome.models import HorusScene
+from scenome.ontology import OntologyVocabulary
+from scenome.semantic import (
     SCENE,
     build_scene_graph,
     build_visualization_html,

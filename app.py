@@ -10,7 +10,7 @@ from typing import Any
 
 import gradio as gr
 
-from clinical_kg_agent.config import (
+from scenome.config import (
     CLIPS_DIR,
     FIXTURE_DIR,
     GRADIO_SERVER_NAME,
@@ -19,12 +19,12 @@ from clinical_kg_agent.config import (
     QUERY_DIR,
     SHAPES_PATH,
 )
-from clinical_kg_agent.extraction import extract_scene
-from clinical_kg_agent.models import HorusScene
-from clinical_kg_agent.ontology import OntologyVocabulary, load_ontology
-from clinical_kg_agent.perception import describe_video
-from clinical_kg_agent.rag import SceneRAG
-from clinical_kg_agent.semantic import (
+from scenome.extraction import extract_scene
+from scenome.models import HorusScene
+from scenome.ontology import OntologyVocabulary, load_ontology
+from scenome.perception import describe_video
+from scenome.rag import SceneRAG
+from scenome.semantic import (
     build_scene_graph,
     build_visualization_html,
     execute_select,
@@ -216,10 +216,10 @@ async def answer_question(
 def build_app() -> gr.Blocks:
     """Build the interface without loading models or launching a server."""
 
-    with gr.Blocks(title="Clinical KG Agent") as demo:
+    with gr.Blocks(title="Scenome") as demo:
         scene_state = gr.State(value=None)
 
-        gr.Markdown("# Clinical KG Agent")
+        gr.Markdown("# Scenome")
 
         with gr.Row():
             video = gr.Video(

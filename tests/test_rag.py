@@ -4,10 +4,10 @@ import asyncio
 
 import pytest
 
-from clinical_kg_agent import rag as rag_module
-from clinical_kg_agent.models import HorusScene
-from clinical_kg_agent.ontology import OntologyVocabulary
-from clinical_kg_agent.rag import SceneRAG, scene_to_lightrag
+from scenome import rag as rag_module
+from scenome.models import HorusScene
+from scenome.ontology import OntologyVocabulary
+from scenome.rag import SceneRAG, scene_to_lightrag
 
 
 def test_validated_scene_becomes_custom_kg(

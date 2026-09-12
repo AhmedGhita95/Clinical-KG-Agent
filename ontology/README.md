@@ -1,6 +1,6 @@
 # HORUS ontology
 
-This directory contains the released HORUS ontology used by Clinical KG Agent.
+This directory contains the released HORUS ontology used by Scenome.
 The application treats this release as its semantic contract for scene types and
 relations.
 
@@ -37,7 +37,7 @@ HORUS is licensed under [Creative Commons Attribution 4.0 International][cc]
 `HORUS-6.0.0.owl` requires attribution to Ahmed Ghita, a link to the license, and
 an indication of any changes. This repository vendors the release unmodified.
 
-The MIT license at the repository root covers the Clinical KG Agent application
+The MIT license at the repository root covers the Scenome application
 code, not the vendored ontology.
 
 [cc]: https://creativecommons.org/licenses/by/4.0/
@@ -49,7 +49,7 @@ code, not the vendored ontology.
 2. Copy the release artifact into this directory.
 3. Update the filename, version metadata, and checksum in this README.
 4. Vendor the release's matching SHACL shapes and competency queries.
-5. Run the Clinical KG Agent test suite.
+5. Run the Scenome test suite.
 
 Verify the current artifact against the recorded checksum:
 

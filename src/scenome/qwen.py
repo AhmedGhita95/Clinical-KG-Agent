@@ -6,7 +6,7 @@ import importlib.util
 import threading
 from typing import Any
 
-from clinical_kg_agent.config import QWEN_MODEL_ID
+from scenome.config import QWEN_MODEL_ID
 
 
 class LocalModelUnavailable(RuntimeError):

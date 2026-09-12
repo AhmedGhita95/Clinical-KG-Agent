@@ -12,8 +12,8 @@ from pyvis.network import Network
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import DCTERMS, PROV, RDF, RDFS
 
-from clinical_kg_agent.models import HorusScene
-from clinical_kg_agent.ontology import OntologyVocabulary, ValidationIssue, validate_scene
+from scenome.models import HorusScene
+from scenome.ontology import OntologyVocabulary, ValidationIssue, validate_scene
 
 
 @dataclass(frozen=True)
@@ -53,7 +53,7 @@ CLASS_COLORS = {
     "Entity": "#475569",
     "Occurrent": "#be123c",
 }
-SCENE = Namespace("urn:clinical-kg-agent:scene:")
+SCENE = Namespace("urn:scenome:scene:")
 
 
 def build_scene_graph(

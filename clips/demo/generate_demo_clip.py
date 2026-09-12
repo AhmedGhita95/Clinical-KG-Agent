@@ -119,7 +119,7 @@ def main() -> None:
             container.mux(packet)
     for packet in stream.encode():
         container.mux(packet)
-    container.metadata["title"] = "Clinical KG Agent synthetic patient-transfer demo"
+    container.metadata["title"] = "Scenome synthetic patient-transfer demo"
     container.metadata["comment"] = "Programmatically generated; contains no recorded people."
     container.close()
 

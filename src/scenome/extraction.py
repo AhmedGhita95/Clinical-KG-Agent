@@ -9,9 +9,9 @@ from typing import Any
 
 from pydantic import ValidationError
 
-from clinical_kg_agent.models import HorusScene
-from clinical_kg_agent.ontology import OntologyVocabulary, ValidationIssue, validate_scene
-from clinical_kg_agent.qwen import get_qwen
+from scenome.models import HorusScene
+from scenome.ontology import OntologyVocabulary, ValidationIssue, validate_scene
+from scenome.qwen import get_qwen
 
 TextGenerator = Callable[[str, str], str]
 

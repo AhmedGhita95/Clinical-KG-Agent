@@ -4,10 +4,10 @@ import json
 
 import pytest
 
-from clinical_kg_agent.extraction import ExtractionError, build_extraction_prompt, extract_scene
-from clinical_kg_agent.models import HorusScene
-from clinical_kg_agent.ontology import OntologyVocabulary
-from clinical_kg_agent.qwen import get_qwen
+from scenome.extraction import ExtractionError, build_extraction_prompt, extract_scene
+from scenome.models import HorusScene
+from scenome.ontology import OntologyVocabulary
+from scenome.qwen import get_qwen
 
 
 def test_prompt_is_built_from_horus(vocabulary: OntologyVocabulary) -> None:

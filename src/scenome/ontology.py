@@ -10,7 +10,7 @@ from rdflib import BNode, Graph, Literal, URIRef
 from rdflib.collection import Collection
 from rdflib.namespace import OWL, RDF, RDFS
 
-from clinical_kg_agent.models import HorusScene
+from scenome.models import HorusScene
 
 
 @dataclass(frozen=True)

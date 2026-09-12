@@ -1,14 +1,14 @@
 cff-version: 1.2.0
-title: Clinical KG Agent
+title: Scenome
 message: >-
   If you use this software, please cite it using the metadata from this file.
 type: software
 authors:
   - given-names: Ahmed
     family-names: Ghita
-repository-code: https://github.com/AhmedGhita95/Clinical-KG-Agent
+repository-code: https://github.com/AhmedGhita95/Scenome
 abstract: >-
-  Clinical KG Agent turns a clinical-scene video into a validated, queryable
+  Scenome turns a clinical-scene video into a validated, queryable
   knowledge graph. A vision-language model proposes typed instances and
   relations, which are accepted only if they conform to the HORUS ontology.
   Validated assertions are serialized as RDF and queried with SPARQL.
