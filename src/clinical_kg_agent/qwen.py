@@ -53,7 +53,7 @@ class QwenService:
         self._processor = AutoProcessor.from_pretrained(
             self.model_id,
             min_pixels=256 * 28 * 28,
-            max_pixels=1280 * 28 * 28,
+            max_pixels=360 * 28 * 28,
             use_fast=True,
         )
         return self._model, self._processor
@@ -85,7 +85,7 @@ class QwenService:
             {
                 "role": "user",
                 "content": [
-                    {"type": "video", "video": video_path, "fps": 1.5},
+                    {"type": "video", "video": video_path, "fps": 1.0, "max_frames": 32},
                     {"type": "text", "text": "Write a concise factual scene description."},
                 ],
             },
