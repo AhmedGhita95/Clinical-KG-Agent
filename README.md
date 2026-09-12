@@ -105,8 +105,7 @@ For a new scene:
 
 ## Ontology
 
-The vendored `HORUS-6.0.0.owl` defines nine classes and six object properties, with
-matching SHACL shapes and five competency queries. See [docs/HORUS.md](docs/HORUS.md)
+We use `HORUS-6.0.0.owl`. See [docs/HORUS.md](docs/HORUS.md)
 for the vocabulary and [ontology/README.md](ontology/README.md) for release metadata
 and checksum.
 
